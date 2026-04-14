@@ -154,7 +154,7 @@ class NovelClassDataset(Dataset):
             print(f"[NovelDataset] class={VOC_CLASS_NAMES[cls_id]:15s} "
                   f"(id={cls_id}) | {n} images available")
 
-    def get_support_and_queries(self, cls_id, k_shot, seed=342):
+    def get_support_and_queries(self, cls_id, k_shot, seed=442):
         """
         For a given novel class, return:
           support_images : list of k_shot (image, binary_mask) tuples
@@ -205,7 +205,7 @@ class NovelClassDataset(Dataset):
 # Prepare base class loaders (for Phase 1)
 # ─────────────────────────────────────────────────────────────────
 def prepare_base_loaders(voc_root, fold=0, batch_size=8,
-                         val_ratio=0.1, num_workers=2, seed=342):
+                         val_ratio=0.1, num_workers=2, seed=442):
     """
     Returns train/val DataLoaders for BASE classes (Phase 1 learning).
     """
