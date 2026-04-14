@@ -194,7 +194,7 @@ def phase2_adapt(novel_dataset, novel_classes, k_shot):
         print(f"\n  Adapting: {cls_name} (class {cls_id})")
 
         support, queries = novel_dataset.get_support_and_queries(
-            cls_id, k_shot=k_shot, seed=142
+            cls_id, k_shot=k_shot, seed=242
         )
         query_data[cls_id] = queries
 
