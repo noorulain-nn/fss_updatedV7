@@ -29,7 +29,7 @@ import Metrics
 # ─────────────────────────────────────────────────────────────────
 VOC_ROOT            = "./data/fss-data/VOCdevkit/VOC2012" 
 NUM_FOLDS           = 4  # ← Run all 4 folds
-K_SHOT              = 5
+K_SHOT              = 1
 BACKBONE_NAME       = "resnet50"
 DECODER_CHANNELS    = 256   # FPN output channels — 256 is standard
 BATCH_SIZE          = 8
@@ -194,7 +194,7 @@ def phase2_adapt(novel_dataset, novel_classes, k_shot):
         print(f"\n  Adapting: {cls_name} (class {cls_id})")
 
         support, queries = novel_dataset.get_support_and_queries(
-            cls_id, k_shot=k_shot, seed=442
+            cls_id, k_shot=k_shot, seed=42
         )
         query_data[cls_id] = queries
 
